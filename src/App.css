@@ -1,28 +1,57 @@
 .App {
   text-align: center;
+  width: 500px;
+  background: #333;
+  font-family: arial;
+  color: #FAFAFA;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  margin: 70px auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+.header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  display: flex;
+  -webkit-border-radius: 25px 25px 0 0;
+  -moz-border-radius: 25px 25px 0 0;
+  border-radius: 25px 25px 0 0;
+  padding: 5px 10px;
+  justify-content: space-around;
 }
 
-.App-title {
-  font-size: 1.5em;
+.header .stats {
+  flex-grow: 1;
 }
 
-.App-intro {
-  font-size: large;
+.stats tr:first-child {
+  font-size: 1.3em;
+  color: #FAFAFA;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.stats tr:last-child {
+  font-size: 1em;
+  color: #C7C9C5;
+  font-family: 'Lato', sans-serif;
+}
+
+.date {
+  text-align: right;
+  margin: auto 5px 5px auto;
+}
+
+.header .date {
+  flex-grow: 4;
+  align-self: flex-end;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.date-big {
+  font-size: 36px;
+}
+
+.date-small {
+  font-size: 24px;
+  text-transform: lowercase;
 }
