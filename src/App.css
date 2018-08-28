@@ -4,9 +4,9 @@
   background: #333;
   font-family: arial;
   color: #FAFAFA;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
+  -webkit-border-radius: 25px 25px 25px 25px;
+  -moz-border-radius: 25px 25px 25px 25px;
+  border-radius: 25px 25px 25px 25px;
   margin: 70px auto;
 }
 
@@ -18,6 +18,7 @@
   border-radius: 25px 25px 0 0;
   padding: 5px 10px;
   justify-content: space-around;
+  height: 60px;
 }
 
 .header .stats {
@@ -54,4 +55,116 @@
 .date-small {
   font-size: 24px;
   text-transform: lowercase;
+}
+
+.task {
+  background: #C7C9C5;
+  width: auto;
+  height: 50px;
+  margin: 10px 10px 10px 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+}
+
+.remove-btn {
+  margin: auto 0 auto 0;
+}
+
+.remove-task-btn {
+  flex: 1 0 auto;
+  visibility: hidden;
+  text-align: right;
+  color: red;
+  font-size: 1.7em;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.remove-btn:hover .remove-task-btn {
+  visibility: visible;
+}
+
+.task .radio {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  align-self: flex-start;
+  margin: auto 0 auto 0;
+  background-color: #E4998B;
+
+}
+
+.task:hover {
+  cursor: pointer;
+}
+
+.task:hover .radio {
+  background-color: #d5857e;
+}
+
+.task-name {
+  flex: 10 0 auto;
+  margin: auto 0 auto 0;
+  text-align: left;
+  padding-left: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  color: #333;
+}
+
+.footer-form {
+  height: 60px;
+  -webkit-border-radius: 0 0 25px 25px;
+  -moz-border-radius: 0 0 25px 25px;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  background-color: #222;
+
+}
+
+.footer-form input[type=text] {
+  flex-grow: 1;
+  border-width: 0 0 1px 0;
+  margin: 15px 10px 15px 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  border-style: none;
+  text-shadow: none;
+  color: #999;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+.footer-form input[type=text]::-webkit-input-placeholder{
+  color: #666;
+  letter-spacing: 2px;
+}
+
+.footer-form input[type=text]:focus{
+  background-color: #444;
+}
+
+.footer-form input[type=submit] {
+  display: block;
+  font-size: .6em;
+  margin: 15px 15px 15px 0;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  border: none;
+  color: #999;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.footer-form input[type=submit]:hover{
+  background: #4b71b5;
+  color: #fafafa;
+  cursor: pointer;
 }
