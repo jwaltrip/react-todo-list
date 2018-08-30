@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Stats from "./Stats";
 
-// const Header = (props) => {
 class Header extends Component {
   state = {
     dayOfMonth: "",
@@ -42,6 +41,8 @@ class Header extends Component {
       if (hour > 12) hour -= 12;
       amPm = 'pm';
     }
+    // if min < 10, pad beginning w another 0
+    if (min < 10) min = '0' + min.toString();
 
     // concat current time + am/pm
     const currTime = hour + ':' + min + ' ' + amPm;

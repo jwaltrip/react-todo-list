@@ -25,7 +25,13 @@ class App extends Component {
       <div className="App">
         <Header tasks={this.state.tasks}/>
         <div className="tasks">
-          <Task/>
+          {this.state.tasks.map((task, idx) => {
+            return <Task
+                    taskName={task.taskName}
+                    isCompleted={task.isCompleted}
+                    key={task.id}
+                  />
+          })}
           <AddTaskForm/>
         </div>
       </div>
