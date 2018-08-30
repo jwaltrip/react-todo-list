@@ -23,6 +23,7 @@
 
 .header .stats {
   flex-grow: 1;
+  align-self: flex-end;
 }
 
 .stats tr:first-child {
@@ -43,7 +44,7 @@
 }
 
 .header .date {
-  flex-grow: 4;
+  flex-grow: 3;
   align-self: flex-end;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -58,7 +59,7 @@
 }
 
 .task {
-  background: #C7C9C5;
+  background: #f2f2f1;
   width: auto;
   height: 50px;
   margin: 10px 10px 10px 10px;
@@ -66,7 +67,6 @@
   display: flex;
   flex-direction: row;
   justify-content: left;
-
 }
 
 .remove-btn {
@@ -77,7 +77,7 @@
   flex: 1 0 auto;
   visibility: hidden;
   text-align: right;
-  color: red;
+  color: #d33333;
   font-size: 1.7em;
   padding-right: 20px;
   cursor: pointer;
@@ -87,14 +87,21 @@
   visibility: visible;
 }
 
-.task .radio {
+.radio.completed {
+  background-color: #5ccf7a;
+}
+
+.task:hover .radio.completed {
+  background-color: #59b872;
+}
+
+.radio {
   height: 25px;
   width: 25px;
   border-radius: 50%;
   align-self: flex-start;
   margin: auto 0 auto 0;
   background-color: #E4998B;
-
 }
 
 .task:hover {
@@ -106,13 +113,22 @@
 }
 
 .task-name {
-  flex: 10 0 auto;
+  flex: 10 5 auto;
   margin: auto 0 auto 0;
   text-align: left;
   padding-left: 15px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   color: #333;
+}
+
+.completed {
+  background-color: #5e5d5d;
+}
+
+.task-name.completed {
+  color: white;
+  text-decoration: line-through;
 }
 
 .footer-form {
@@ -161,6 +177,7 @@
   font-weight: bold;
   text-shadow: none;
   text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
 }
 
 .footer-form input[type=submit]:hover{

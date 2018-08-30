@@ -10,8 +10,8 @@ class App extends Component {
           <table className="stats">
             <tbody>
             <tr>
-              <td>21</td>
-              <td>7</td>
+              <td>9</td>
+              <td>3</td>
             </tr>
             <tr>
               <td>Tasks</td>
@@ -20,8 +20,9 @@ class App extends Component {
             </tbody>
           </table>
           <div className="date">
-            <span className="date-big">28</span>
+            <span className="date-big">30</span>
             <span className="date-small"> Aug</span>
+            <span className="time"> @ 12:17 pm</span>
           </div>
         </div>
         {/* TASKS CONTAINER */}
@@ -38,13 +39,11 @@ class App extends Component {
               <a className="remove-task-btn">✖</a>
             </div>
           </div>
-          {/* INDIVIDUAL TASK */}
-          <div className="task">
-            <div className="radio">
-              <div className="radio-inactive"> </div>
-            </div>
-            <div className="task-name">
-              Task 2
+          {/* COMPLETED TASK */}
+          <div className="task completed">
+            <div className="radio completed"> </div>
+            <div className="task-name completed">
+              Completed Task
             </div>
             <div className="remove-btn">
               <a className="remove-task-btn">✖</a>
@@ -55,7 +54,7 @@ class App extends Component {
         {/* FOOTER FORM */}
         <div className="footer-form">
           <input type="text" value="" />
-          <input type="submit" value="ADD" />
+          <input type="submit" value="ADD TASK" />
         </div>
       </div>
     );
