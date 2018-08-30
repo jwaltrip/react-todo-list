@@ -57,7 +57,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <Stats/>
+        <Stats tasks={this.props.tasks}/>
         <div className="date">
           <span className="date-big">{this.state.dayOfMonth}</span>
           <span className="date-small"> {this.state.month}</span>
