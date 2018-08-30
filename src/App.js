@@ -23,17 +23,6 @@ class App extends Component {
   onTaskToggle = (idx) => {
     const newState = {...this.state};
 
-    // newState.tasks.map((task, index) => {
-    //   if (idx === index) {
-    //     const isTaskCompleted = task.isCompleted;
-    //     if (isTaskCompleted) {
-    //       return task.isCompleted = false;
-    //     } else {
-    //       return task.isCompleted = true;
-    //     }
-    //   }
-    // });
-
     console.log('onTaskToggle', newState.tasks[idx]);
     newState.tasks[idx].isCompleted = !newState.tasks[idx].isCompleted;
 
@@ -54,13 +43,25 @@ class App extends Component {
     })
   };
 
+  onTaskAdd = (taskName) => {
+    const newState = {...this.state};
+
+    newState.tasks.push({
+      id: new Date().toString(),
+      taskName: taskName,
+      isCompleted: false
+    });
+
+    this.setState(newState);
+  };
+
   render() {
     return (
       <div className="App">
         <Header tasks={this.state.tasks}/>
         <div className="tasks">
           {this.listTasks()}
-          <AddTaskForm/>
+          <AddTaskForm handleTaskAdd={this.onTaskAdd}/>
         </div>
       </div>
     );
