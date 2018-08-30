@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Stats = (props) => {
   // get length of state.tasks array
