@@ -11,9 +11,11 @@ class Task extends Component {
 
     return (
       <div className={"task" + isCompleted}>
-        <div className={"radio" + isCompleted}> </div>
-        <div className={"task-name" + isCompleted}>
-          {this.props.taskName}
+        <div className="toggle-click" onClick={this.props.handleTaskToggle}>
+          <div className={"radio" + isCompleted}> </div>
+          <div className={"task-name" + isCompleted}>
+            {this.props.taskName}
+          </div>
         </div>
         <div className="remove-btn">
           <a className="remove-task-btn">✖</a>
