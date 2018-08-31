@@ -13,11 +13,9 @@ class Task extends Component {
       <div className={"task" + isCompleted}>
         <div className="toggle-click" onClick={this.props.handleTaskToggle}>
           <div className={"radio" + isCompleted}> </div>
-          {/*<div className="task-name-container">*/}
             <div className={"task-name" + isCompleted}>
               {this.props.taskName}
             </div>
-          {/*</div>*/}
         </div>
         <div className="remove-btn"
              onClick={()=> {this.props.handleTaskRemove(this.props.id)}}>
