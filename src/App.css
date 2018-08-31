@@ -68,6 +68,7 @@
   flex-direction: row;
   justify-content: left;
   line-height: 50px;
+  transition: background-color 200ms ease-in-out;
 }
 
 .toggle-click {
@@ -90,6 +91,7 @@
   font-size: 1.7em;
   padding-right: 20px;
   cursor: pointer;
+  height: 100%;
 }
 
 .remove-btn:hover .remove-task-btn {
@@ -97,11 +99,11 @@
 }
 
 .radio.completed {
-  background-color: #5ccf7a;
+  background-color: #58d178;
 }
 
 .task:hover .radio.completed {
-  background-color: #59b872;
+  background-color: #28e459;
 }
 
 .radio {
@@ -110,42 +112,48 @@
   border-radius: 50%;
   align-self: flex-start;
   margin: auto 0 auto 0;
-  background-color: #E4998B;
+  background-color: #ff7a7a;
 }
 
 .task:hover {
   cursor: pointer;
+  background-color: #d3d3d3;
+  transition: background-color 200ms ease-in-out;
+}
+
+.task:hover.completed {
+  cursor: pointer;
+  background-color: #525252;
 }
 
 .task:hover .radio {
-  background-color: #d5857e;
-}
-
-.task-name-container {
-
+  background-color: #f6524a;
+  transition: background-color 200ms ease-in-out;
 }
 
 .task-name {
   width: 390px;
   height: inherit;
   margin: auto 0 auto 0;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 10px 15px;
   text-align: left;
-  padding-left: 15px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   color: #333;
   overflow-wrap: break-word;
-  line-height: 1em;
+  line-height: 1.3em;
 }
 
 .completed {
   background-color: #5e5d5d;
+  transition: background-color 200ms ease-in-out;
 }
+
 
 .task-name.completed {
   color: white;
   text-decoration: line-through;
+  background-color: rgba(0,0,0,0);
 }
 
 .footer-form form {
@@ -164,13 +172,17 @@
   margin: 15px 10px 15px 15px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #444;
+  background-color: #3b3a3a;
   border-style: none;
-  text-shadow: none;
   color: #f8f8f8;
   letter-spacing: 2px;
   outline: none;
   font-family: 'Open Sans', sans-serif;
+}
+
+.footer-form form textarea:focus {
+  background-color: #444;
+  transition: background-color 200ms ease-in-out;
 }
 
 .footer-form form textarea::-webkit-input-placeholder{
@@ -187,7 +199,7 @@
   background-color: #333;
   border-radius: 5px;
   border: none;
-  color: #d1d1d1;
+  color: #fff;
   letter-spacing: 2px;
   font-weight: bold;
   text-shadow: none;
@@ -196,7 +208,8 @@
 }
 
 .footer-form form input[type=submit]:hover{
-  background: #4b71b5;
-  color: #fafafa;
+  background: #2e6bcc;
+  color: #fff;
   cursor: pointer;
+  transition: background 100ms ease-in-out;
 }
