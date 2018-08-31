@@ -20,20 +20,52 @@ class App extends Component {
     ]
   };
 
+  // this toggles the task completed or uncompleted
   onTaskToggle = (idx) => {
     const newState = {...this.state};
 
-    console.log('onTaskToggle', newState.tasks[idx]);
+    // console.log('onTaskToggle', newState.tasks[idx]);
+    // toggle the state.isCompleted
     newState.tasks[idx].isCompleted = !newState.tasks[idx].isCompleted;
 
+    // set state
     this.setState(newState);
   };
 
+  // function to add a task to state.tasks arr
+  onTaskAdd = (taskName) => {
+    const newState = {...this.state};
+
+    // push new task to state.tasks
+    newState.tasks.push({
+      id: Date.now().toString(),
+      taskName: taskName,
+      isCompleted: false
+    });
+
+    // set state
+    this.setState(newState);
+  };
+
+  // function that is called to remove a task from state.tasks arr
+  onTaskRemove = (idx) => {
+    const newState = {...this.state};
+
+    // console.log('onTaskRemove ID', idx);
+    // remove the task from state.tasks
+    newState.tasks.splice(idx, 1);
+
+    // set state
+    this.setState(newState);
+  };
+
+  // returns an array of Task components
   listTasks = () => {
     return this.state.tasks.map((task, idx) => {
       return (
         <Task
           handleTaskToggle={()=> {this.onTaskToggle(idx)}}
+          handleTaskRemove={()=> {this.onTaskRemove(idx)}}
           taskName={task.taskName}
           isCompleted={task.isCompleted}
           id={task.id}
@@ -41,18 +73,6 @@ class App extends Component {
         />
       );
     })
-  };
-
-  onTaskAdd = (taskName) => {
-    const newState = {...this.state};
-
-    newState.tasks.push({
-      id: new Date().toString(),
-      taskName: taskName,
-      isCompleted: false
-    });
-
-    this.setState(newState);
   };
 
   render() {
@@ -67,5 +87,7 @@ class App extends Component {
     );
   }
 }
+
+// TODO add propTypes
 
 export default App;
