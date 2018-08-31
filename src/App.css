@@ -167,14 +167,14 @@
   background-color: #444;
   border-style: none;
   text-shadow: none;
-  color: #d1d1d1;
+  color: #f8f8f8;
   letter-spacing: 2px;
   outline: none;
   font-family: 'Open Sans', sans-serif;
 }
 
 .footer-form form input[type=text]::-webkit-input-placeholder{
-  color: #666;
+  color: #f8f8f8;
   letter-spacing: 2px;
   font-family: 'Open Sans', sans-serif;
 }
