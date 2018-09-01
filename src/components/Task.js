@@ -18,18 +18,27 @@ class Task extends Component {
       checkmark = <i className="fas fa-check checkmark"> </i>;
     }
 
+    // check to see if state.showTimestamps toggled on
+    let hidden = '';
+    if (!this.props.showTimestamps) {
+      hidden = ' hidden';
+    }
+
     return (
-      <div className={"task" + isCompleted}>
-        <div className="toggle-click" onClick={this.props.handleTaskToggle}>
-          <div className={"radio" + isCompleted}>{checkmark}</div>
-            <div className={"task-name" + isCompleted}>
-              {this.props.taskName}
-            </div>
+      <div>
+        <div className={"task" + isCompleted}>
+          <div className="toggle-click" onClick={this.props.handleTaskToggle}>
+            <div className={"radio" + isCompleted}>{checkmark}</div>
+              <div className={"task-name" + isCompleted}>
+                {this.props.taskName}
+              </div>
+          </div>
+          <div className="remove-btn"
+               onClick={()=> {this.props.handleTaskRemove(this.props.id)}}>
+            <a className="remove-task-btn">✖</a>
+          </div>
         </div>
-        <div className="remove-btn"
-             onClick={()=> {this.props.handleTaskRemove(this.props.id)}}>
-          <a className="remove-task-btn">✖</a>
-        </div>
+        <div className={"timestamp" + hidden}><strong>added: &nbsp;</strong>17 min ago</div>
       </div>
     );
   }

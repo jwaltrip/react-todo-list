@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header";
 import AddTaskForm from "./components/AddTaskForm";
 import Task from "./components/Task";
+import TimestampToggle from "./components/TimestampToggle";
 
 // main To do list component
 class App extends Component {
@@ -19,6 +20,8 @@ class App extends Component {
         isCompleted: true
       }
     ],
+
+    showTimestamps: true,
 
     error: ''
   };
@@ -80,6 +83,7 @@ class App extends Component {
           handleTaskRemove={()=> {this.onTaskRemove(idx)}}
           taskName={task.taskName}
           isCompleted={task.isCompleted}
+          showTimestamps={this.state.showTimestamps}
           id={task.id}
           key={task.id}
         />
@@ -99,10 +103,11 @@ class App extends Component {
       <div>
         {warning}
         <div className="App">
-          <Header tasks={this.state.tasks}/>
+          <TimestampToggle />
+          <Header tasks={this.state.tasks} />
           <div className="tasks">
             {this.listTasks()}
-            <AddTaskForm handleTaskAdd={this.onTaskAdd}/>
+            <AddTaskForm handleTaskAdd={this.onTaskAdd} />
           </div>
         </div>
       </div>
