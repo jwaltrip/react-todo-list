@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   width: 500px;
-  background: #333;
+  background: #222;
   font-family: arial;
   color: #FAFAFA;
   -webkit-border-radius: 25px 25px 25px 25px;
@@ -62,7 +62,7 @@
   background: #f2f2f1;
   width: auto;
   min-height: 50px;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 0 10px;
   padding-left: 20px;
   display: flex;
   flex-direction: row;
@@ -99,11 +99,12 @@
 }
 
 .radio.completed {
-  background-color: #58d178;
+  background-color: #19bc44;
+
 }
 
 .task:hover .radio.completed {
-  background-color: #28e459;
+  /*background-color: #58d178;*/
 }
 
 .radio {
@@ -112,7 +113,7 @@
   border-radius: 50%;
   align-self: flex-start;
   margin: auto 0 auto 0;
-  background-color: #ff7a7a;
+  background-color: #f6524a;
 }
 
 .task:hover {
@@ -127,8 +128,15 @@
 }
 
 .task:hover .radio {
-  background-color: #f6524a;
+  /*background-color: #ff7a7a;*/
   transition: background-color 200ms ease-in-out;
+}
+
+.checkmark {
+  margin: auto 0 auto 0;
+  display: block;
+  padding-top: 5px;
+  color: #fff;
 }
 
 .task-name {
@@ -163,7 +171,6 @@
   border-radius: 0 0 25px 25px;
   display: flex;
   background-color: #222;
-
 }
 
 .footer-form form textarea {

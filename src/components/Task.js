@@ -9,10 +9,16 @@ class Task extends Component {
       isCompleted = ' completed';
     }
 
+    // add checkmark if completed
+    let checkmark = ' ';
+    if (this.props.isCompleted) {
+      checkmark = <i className="fas fa-check checkmark"></i>;
+    }
+
     return (
       <div className={"task" + isCompleted}>
         <div className="toggle-click" onClick={this.props.handleTaskToggle}>
-          <div className={"radio" + isCompleted}> </div>
+          <div className={"radio" + isCompleted}>{checkmark}</div>
             <div className={"task-name" + isCompleted}>
               {this.props.taskName}
             </div>
