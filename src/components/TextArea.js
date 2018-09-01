@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // a textarea component that autoresizes it's height based on current amount of text input
+// the textarea's state is handled by it's parent AddTaskForm component
 class TextArea extends Component {
   // handles text input using a callback function passed down thru props from AddTaskForm component
   onChange = (event) => {
@@ -19,5 +20,7 @@ class TextArea extends Component {
     );
   }
 }
+
+// TODO add propTypes
 
 export default TextArea;

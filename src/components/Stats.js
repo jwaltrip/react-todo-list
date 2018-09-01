@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Stats component
+// is displayed in Header component
+// displays the number of completed/uncompleted tasks
 const Stats = (props) => {
   // get length of state.tasks array
   const numTasks = props.tasks.length;
@@ -24,5 +27,7 @@ const Stats = (props) => {
     </table>
   );
 };
+
+// TODO add propTypes
 
 export default Stats;

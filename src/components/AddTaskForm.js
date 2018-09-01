@@ -3,6 +3,7 @@ import TextArea from './TextArea';
 
 // Component that holds an autogrowing textarea and submit form to add a task to task list
 class AddTaskForm extends Component {
+  // rows and lineHeight values are used for autogrowing textarea field
   state = {
     inputValue: '',
     rows: 1,
@@ -11,7 +12,7 @@ class AddTaskForm extends Component {
 
   // handles textareas text change
   handleChange = (e) => {
-    // to calculate proper recalc when deleting lines
+    // calculate proper row count recalc when deleting lines
     const oldRows = e.target.rows;
     e.target.rows = 1;
 
@@ -57,5 +58,7 @@ class AddTaskForm extends Component {
     );
   }
 }
+
+// TODO add propTypes
 
 export default AddTaskForm;

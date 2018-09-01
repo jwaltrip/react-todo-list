@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// Individual Task component
 class Task extends Component {
   render() {
     // conditional to check if task is completed
@@ -9,10 +10,11 @@ class Task extends Component {
       isCompleted = ' completed';
     }
 
-    // add checkmark if completed
+    // add checkmark to task if completed
+    // using fontawesome for checkmark icon
     let checkmark = ' ';
     if (this.props.isCompleted) {
-      checkmark = <i className="fas fa-check checkmark"></i>;
+      checkmark = <i className="fas fa-check checkmark"> </i>;
     }
 
     return (
@@ -31,5 +33,7 @@ class Task extends Component {
     );
   }
 }
+
+// TODO add propTypes
 
 export default Task;

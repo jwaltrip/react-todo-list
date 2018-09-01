@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import AddTaskForm from "./components/AddTaskForm";
 import Task from "./components/Task";
 
+// main To do list component
 class App extends Component {
   state = {
     tasks: [
@@ -24,6 +25,7 @@ class App extends Component {
 
   // this toggles the task completed or uncompleted
   onTaskToggle = (idx) => {
+    // copy old state
     const newState = {...this.state};
 
     // console.log('onTaskToggle', newState.tasks[idx]);
@@ -36,8 +38,10 @@ class App extends Component {
 
   // function to add a task to state.tasks arr
   onTaskAdd = (taskName) => {
+    // copy old state
     const newState = {...this.state};
 
+    // if taskname is not given or is empty, set state.error to show warning banner
     if (!taskName || taskName === '') {
       newState.error = 'please enter a task';
     } else {
@@ -47,6 +51,7 @@ class App extends Component {
         taskName: taskName,
         isCompleted: false
       });
+      // reset error message in case there was a previous error
       newState.error = '';
     }
 
@@ -56,9 +61,9 @@ class App extends Component {
 
   // function that is called to remove a task from state.tasks arr
   onTaskRemove = (idx) => {
+    // copy old state
     const newState = {...this.state};
 
-    // console.log('onTaskRemove ID', idx);
     // remove the task from state.tasks
     newState.tasks.splice(idx, 1);
 
@@ -84,6 +89,7 @@ class App extends Component {
 
   render() {
     // check for error msg
+    // if error, show warning banner
     let warning = '';
     if (this.state.error) {
       warning = <div className="warning"><strong>Warning: &nbsp;</strong>{this.state.error}</div>;

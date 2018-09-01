@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Stats from "./Stats";
 
+// Header component
+// this also includes the Stats component that keeps track of finished/unfinshed tasks
 class Header extends Component {
   state = {
     dayOfMonth: "",
@@ -8,8 +10,11 @@ class Header extends Component {
     currentTime: ""
   };
 
+  // this is to be used on component mount/unmount to set interval to get current datetime
   pollInterval = null;
 
+  // lifecycle method runs when component is mounted
+  // initializes resources, specifically sets an interval to get current datetime
   componentDidMount() {
     // get current DateTime every 1 seconds
     if (!this.pollInterval) {
@@ -17,11 +22,14 @@ class Header extends Component {
     }
   }
 
+  // lifecycle method runs when component is removed from DOM
+  // clears the interval set to get current datetime
   componentWillUnmount() {
     if (this.pollInterval) clearInterval(this.pollInterval);
     this.pollInterval = null;
   }
 
+  // function to get current datetime, format it properly and set state
   getCurrentDateTime = () => {
     // make a copy of current state using spread operator
     const newState = {...this.state};
@@ -29,7 +37,7 @@ class Header extends Component {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     // get current datetime in seconds
     const today = new Date();
-    // get dayOfMonth, month, and time
+    // get dayOfMonth, month, and time (hours, mins)
     const currDayOfMonth = today.getDate();
     const currMonth = months[today.getMonth()];
     let hour = today.getHours();
@@ -51,6 +59,7 @@ class Header extends Component {
     newState.dayOfMonth = currDayOfMonth;
     newState.month = currMonth;
     newState.currentTime = currTime;
+
     // set state 
     this.setState(newState);
   };
@@ -68,5 +77,7 @@ class Header extends Component {
     );
   }
 }
+
+// TODO set propTypes
 
 export default Header;
