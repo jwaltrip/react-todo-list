@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Stats from "./Stats";
 
 // Header component
@@ -78,6 +79,12 @@ class Header extends Component {
   }
 }
 
-// TODO set propTypes
+Header.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    taskName: PropTypes.string.isRequired,
+    isCompleted: PropTypes.bool.isRequired
+  })).isRequired
+};
 
 export default Header;

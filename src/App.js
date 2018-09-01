@@ -110,6 +110,4 @@ class App extends Component {
   }
 }
 
-// TODO add propTypes
-
 export default App;

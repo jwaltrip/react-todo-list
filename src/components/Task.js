@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Individual Task component
 class Task extends Component {
@@ -34,6 +35,12 @@ class Task extends Component {
   }
 }
 
-// TODO add propTypes
+Task.propTypes = {
+  id: PropTypes.number.isRequired,
+  taskName: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
+  handleTaskToggle: PropTypes.func.isRequired,
+  handleTaskRemove: PropTypes.func.isRequired
+};
 
 export default Task;

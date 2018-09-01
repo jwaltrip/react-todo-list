@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Stats component
 // is displayed in Header component
@@ -28,6 +29,12 @@ const Stats = (props) => {
   );
 };
 
-// TODO add propTypes
+Stats.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    taskName: PropTypes.string.isRequired,
+    isCompleted: PropTypes.bool.isRequired
+  })).isRequired
+};
 
 export default Stats;

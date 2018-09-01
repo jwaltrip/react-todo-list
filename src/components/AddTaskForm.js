@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TextArea from './TextArea';
 
 // Component that holds an autogrowing textarea and submit form to add a task to task list
@@ -59,6 +60,8 @@ class AddTaskForm extends Component {
   }
 }
 
-// TODO add propTypes
+AddTaskForm.propTypes = {
+  handleTaskAdd: PropTypes.func.isRequired
+};
 
 export default AddTaskForm;
