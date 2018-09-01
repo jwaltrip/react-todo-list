@@ -17,7 +17,9 @@ class App extends Component {
         taskName: "Completed Task",
         isCompleted: true
       }
-    ]
+    ],
+
+    error: ''
   };
 
   // this toggles the task completed or uncompleted
@@ -36,12 +38,17 @@ class App extends Component {
   onTaskAdd = (taskName) => {
     const newState = {...this.state};
 
-    // push new task to state.tasks
-    newState.tasks.push({
-      id: Date.now().toString(),
-      taskName: taskName,
-      isCompleted: false
-    });
+    if (!taskName || taskName === '') {
+      newState.error = 'please enter a task';
+    } else {
+      // push new task to state.tasks
+      newState.tasks.push({
+        id: Date.now().toString(),
+        taskName: taskName,
+        isCompleted: false
+      });
+      newState.error = '';
+    }
 
     // set state
     this.setState(newState);
@@ -76,12 +83,21 @@ class App extends Component {
   };
 
   render() {
+    // check for error msg
+    let warning = '';
+    if (this.state.error) {
+      warning = <div className="warning"><strong>Warning: &nbsp;</strong>{this.state.error}</div>;
+    }
+
     return (
-      <div className="App">
-        <Header tasks={this.state.tasks}/>
-        <div className="tasks">
-          {this.listTasks()}
-          <AddTaskForm handleTaskAdd={this.onTaskAdd}/>
+      <div>
+        {warning}
+        <div className="App">
+          <Header tasks={this.state.tasks}/>
+          <div className="tasks">
+            {this.listTasks()}
+            <AddTaskForm handleTaskAdd={this.onTaskAdd}/>
+          </div>
         </div>
       </div>
     );

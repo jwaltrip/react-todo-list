@@ -7,7 +7,20 @@
   -webkit-border-radius: 25px 25px 25px 25px;
   -moz-border-radius: 25px 25px 25px 25px;
   border-radius: 25px 25px 25px 25px;
-  margin: 70px auto;
+  margin: 25px auto;
+}
+
+.warning {
+  text-align: left;
+  width: 470px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  margin: 25px auto;
+  background-color: #f2dede;
+  border: 1px solid #ebcccc;
+  color: #a94442;
+  padding: 10px 10px 10px 15px;
 }
 
 .header {
@@ -124,12 +137,11 @@
 
 .task:hover.completed {
   cursor: pointer;
-  background-color: #525252;
+  background-color: #4b4b4b;
 }
 
 .task:hover .radio {
-  /*background-color: #ff7a7a;*/
-  transition: background-color 200ms ease-in-out;
+  /*transition: background-color 200ms ease-in-out;*/
 }
 
 .checkmark {
@@ -153,7 +165,8 @@
 }
 
 .completed {
-  background-color: #5e5d5d;
+  /*background-color: #5e5d5d;*/
+  background-color: #525252;
   transition: background-color 200ms ease-in-out;
 }
 
