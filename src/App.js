@@ -74,6 +74,14 @@ class App extends Component {
     this.setState(newState);
   };
 
+  handleToggleTimestamps = () => {
+    const newState = {...this.state};
+
+    newState.showTimestamps = !newState.showTimestamps;
+
+    this.setState(newState);
+  };
+
   // returns an array of Task components
   listTasks = () => {
     return this.state.tasks.map((task, idx) => {
@@ -103,7 +111,7 @@ class App extends Component {
       <div>
         {warning}
         <div className="App">
-          <TimestampToggle />
+          <TimestampToggle handleToggleTimestamps={this.handleToggleTimestamps} />
           <Header tasks={this.state.tasks} />
           <div className="tasks">
             {this.listTasks()}
