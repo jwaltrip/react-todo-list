@@ -1,8 +1,46 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 // Individual Task component
 class Task extends Component {
+  state = {
+    timeDiff: ''
+  };
+
+  // this is to be used on component mount/unmount to set interval to get current datetime
+  pollInterval = null;
+
+  // lifecycle method runs when component is mounted
+  // initializes resources, specifically sets an interval to get time diff between now and time task was added
+  componentDidMount() {
+    // get time diff every 1 seconds
+    if (!this.pollInterval) {
+      this.pollInterval = setInterval(this.calcTimeDiff, 1000);
+    }
+  }
+
+  // lifecycle method runs when component is removed from DOM
+  // clears the interval set to time diff
+  componentWillUnmount() {
+    if (this.pollInterval) clearInterval(this.pollInterval);
+    this.pollInterval = null;
+  }
+
+  // calculates time difference between time task was added and now
+  // uses Moment.js
+  calcTimeDiff = () => {
+    // convert timestamp in ms to Moment.js obj
+    const timestamp = moment(this.props.timestamp);
+
+    // copy old state
+    const newState = {...this.state};
+    // calc time diff
+    newState.timeDiff = timestamp.fromNow();
+    // set state
+    this.setState(newState);
+  };
+
   render() {
     // conditional to check if task is completed
     // if completed, add 'completed' class tags
@@ -19,6 +57,7 @@ class Task extends Component {
     }
 
     // check to see if state.showTimestamps toggled on
+    // if state.showTimestamps == false, then add the hidden class to timestamp div
     let hidden = '';
     if (!this.props.showTimestamps) {
       hidden = ' hidden';
@@ -38,7 +77,7 @@ class Task extends Component {
             <a className="remove-task-btn">✖</a>
           </div>
         </div>
-        <div className={"timestamp" + hidden}><strong>added: &nbsp;</strong>17 min ago</div>
+        <div className={"timestamp" + hidden}><strong>added: &nbsp;</strong>{this.state.timeDiff}</div>
       </div>
     );
   }

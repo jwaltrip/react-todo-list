@@ -12,12 +12,14 @@ class App extends Component {
       {
         id: 0,
         taskName: "Task 1",
-        isCompleted: false
+        isCompleted: false,
+        timestamp: new Date().toString()
       },
       {
         id: 1,
         taskName: "Completed Task",
-        isCompleted: true
+        isCompleted: true,
+        timestamp: new Date().toString()
       }
     ],
 
@@ -52,7 +54,8 @@ class App extends Component {
       newState.tasks.push({
         id: Date.now().toString(),
         taskName: taskName,
-        isCompleted: false
+        isCompleted: false,
+        timestamp: Date.now()
       });
       // reset error message in case there was a previous error
       newState.error = '';
@@ -91,6 +94,7 @@ class App extends Component {
           handleTaskRemove={()=> {this.onTaskRemove(idx)}}
           taskName={task.taskName}
           isCompleted={task.isCompleted}
+          timestamp={task.timestamp}
           showTimestamps={this.state.showTimestamps}
           id={task.id}
           key={task.id}
