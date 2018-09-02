@@ -190,24 +190,35 @@
   padding: 15px 15px 0 0;
   margin: 0 0 0 auto;
   color: #6e6e6e;
+  width: fit-content;
+  overflow: hidden;
 }
 
 .timestamp-toggle-text {
-  position: inherit;
-  display: none;
-  width: 100%;
-  /*visibility: hidden;*/
-}
-
-.clock-btn:hover .timestamp-toggle-text {
-  /*visibility: visible;*/
+  position: absolute;
   display: inline;
+  padding: 0 10px 0 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 0.8em;
+  visibility: hidden;
 }
 
-.timestamp-toggle-btn:hover {
+@keyframes slide-left {
+  0%, 30% { opacity: 0; }
+  100%    { transform: translateX(-100%); opacity: 1; visibility: visible; }
+}
+
+.timestamp-toggle:hover .timestamp-toggle-text {
+  animation: slide-left 0.5s forwards;
+  z-index: 90;
+  cursor: pointer;
+}
+
+.timestamp-toggle:hover .timestamp-toggle-btn {
   cursor: pointer;
   color: #aeaeae;
-  transition: color 100ms ease-in-out;
+  z-index: 99;
+  transition: all 100ms ease-in-out;
 }
 
 .timestamp.hidden {
