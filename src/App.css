@@ -222,7 +222,15 @@
 }
 
 .timestamp.hidden {
-  display: none;
+  /*display: none;*/
+  height: 0;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
+  -ms-transition: all 100ms;
+  -o-transition: all 100ms;
+  transition: all 100ms;
 }
 
 .footer-form form {
