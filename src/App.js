@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import AddTaskForm from "./components/AddTaskForm";
 import Task from "./components/Task";
 import TimestampToggle from "./components/TimestampToggle";
+import Footer from "./components/Footer";
 
 // main To do list component
 class App extends Component {
@@ -122,6 +123,7 @@ class App extends Component {
             <AddTaskForm handleTaskAdd={this.onTaskAdd} />
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

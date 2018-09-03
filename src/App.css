@@ -290,3 +290,17 @@
   cursor: pointer;
   transition: background 100ms ease-in-out;
 }
+
+.footer-made-by {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 0.8em;
+  color: #444;
+}
+
+.footer-made-by a {
+  color: #2e6bcc;
+}
+.footer-made-by a:hover {
+  color: #004ecb;
+}
