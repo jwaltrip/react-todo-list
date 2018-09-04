@@ -1,6 +1,6 @@
 ## To-Do List Written in React
 
-This is a simple To-Do list written in React styled by myself
+This is a simple To-Do list app written in React styled by myself
 
 ### See it in action!
 https://jwaltrip.github.io/react-todo-list/
