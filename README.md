@@ -1,4 +1,4 @@
-## To-Do List Written in React
+## To-Do List App Written in React
 
 This is a simple To-Do list app written in React styled by myself
 
@@ -7,7 +7,7 @@ https://jwaltrip.github.io/react-todo-list/
 
 ### Features
 * Add/Remove tasks
-* Click on task to mark it as complete
+* Click on task to toggle as complete/uncomplete
 * Can remove task from list separately from marking task complete
 * Text input is multi-line, and auto-grows in height as text is added/removed
 * Retains a timestamp of when a task was added to list
