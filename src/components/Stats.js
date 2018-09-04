@@ -14,18 +14,16 @@ const Stats = (props) => {
   }).length;
 
   return (
-    <table className="stats">
-      <tbody>
-      <tr>
-        <td>{numTasks}</td>
-        <td>{numCompletedTasks}</td>
-      </tr>
-      <tr>
-        <td>Tasks</td>
-        <td>Done</td>
-      </tr>
-      </tbody>
-    </table>
+    <div className="stats">
+      <div className="col">
+        <div className="stats-value">{numTasks}</div>
+        <div className="stats-title">Tasks</div>
+      </div>
+      <div className="col">
+        <div className="stats-value">{numCompletedTasks}</div>
+        <div className="stats-title">Done</div>
+      </div>
+    </div>
   );
 };
 
